@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School Dashboard</title>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -20,6 +21,15 @@
 </head>
 
 <body class="bg-gray-50 dark:bg-[#0f1629] text-gray-800 dark:text-gray-100 min-h-screen">
+    <div id="loading" class=" fixed z-1500 w-full h-full bg-[white] flex items-center justify-center top-0   ">
+        <div class="relative">
+            <img src="./img/image.png" alt="loading">
+            <div>
+                <p class="absolute top-13 left-9.5 text-[12px] text-[#e5b636]">Loading...</p>
+            </div>
+        </div>
+    
+    </div>
 
     <div class="flex">
         <aside
@@ -141,7 +151,6 @@
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-
                         <div
                             class="flex flex-col gap-6 rounded-xl border bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300 p-6">
                             <div class="flex items-center justify-between">
@@ -242,10 +251,9 @@
                                             <circle cx="9" cy="7" r="4"></circle>
                                         </svg>
                                         <div>
-                                            <a  onclick="switchPage('teachersPage', this)">
                                             <div>Manage Teachers</div>
                                             <div class="text-sm text-blue-100">View and manage all teachers</div>
-                                            </a>
+                                        </div>
                                     </button>
 
                                     <button
@@ -261,10 +269,8 @@
                                             <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
                                         </svg>
                                         <div>
-                                            <a onclick="switchPage('studentsPage', this)">
                                             <div>Manage Students</div>
                                             <div class="text-sm text-purple-100">View and manage all students</div>
-                                            </a>
                                         </div>
                                     </button>
                                 </div>
@@ -304,13 +310,22 @@
                     </div>
                 </div>
 
-            <div id="teachersPage" class="page hidden">
-
-                    <div class="mb-8">
-
-                        <h2 class="text-gray-900 dark:text-white text-2xl font-bold mb-2">Teachers Management</h2>
-                        <p class="text-gray-600 dark:text-gray-400" id="teachersCount">Showing 24 of 24 teachers</p>
-
+                <div id="teachersPage" class="page hidden">
+                    <div class="flex items-center justify-between mb-8">
+                        <div>
+                            <h2 class="text-gray-900 dark:text-white text-2xl font-bold mb-2">Teachers Management</h2>
+                            <p class="text-gray-600 dark:text-gray-400" id="teachersCount">Showing 24 of 24 teachers</p>
+                        </div>
+                        <button onclick="openTeacherModal()" data-slot="button"
+                            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 has-[>svg]:px-3 gap-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-plus h-5 w-5" aria-hidden="true">
+                                <path d="M5 12h14"></path>
+                                <path d="M12 5v14"></path>
+                            </svg>
+                            Add Teacher
+                        </button>
                     </div>
 
                     <div
@@ -323,8 +338,7 @@
                                 <div class="relative">
                                     <button
                                         class="filter-btn px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors flex items-center gap-2"
-                                        data-filter="gender" data-value="all">
-                                        All Gender
+                                        data-filter="gender" data-value="all">All Gender
                                         <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -335,26 +349,20 @@
                                         class="absolute hidden mt-1 w-48 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-10">
                                         <button
                                             class="gender-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center gap-2"
-                                            data-value="all">
-                                            All Gender
-                                        </button>
+                                            data-value="all">All Gender</button>
                                         <button
                                             class="gender-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center gap-2"
-                                            data-value="male">
-                                            Male Only
-                                        </button>
+                                            data-value="male">Male Only</button>
                                         <button
                                             class="gender-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center gap-2"
-                                            data-value="female">
-                                            Female Only
-                                        </button>
+                                            data-value="female">Female Only</button>
                                     </div>
                                 </div>
 
                                 <div class="relative">
-                                    <button class="filter-btn px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors flex items-center gap-2"
-                                        data-filter="experience" data-value="all">
-                                        All Experience
+                                    <button
+                                        class="filter-btn px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors flex items-center gap-2"
+                                        data-filter="experience" data-value="all">All Experience
                                         <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -368,33 +376,23 @@
                                             data-value="all">All Experience</button>
                                         <button
                                             class="experience-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center gap-2"
-                                            data-value="0-5">
-                                            0-5 years
-                                        </button>
+                                            data-value="0-5">0-5 years</button>
                                         <button
                                             class="experience-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center gap-2"
-                                            data-value="6-10">
-                                            6-10 years
-                                        </button>
+                                            data-value="6-10">6-10 years</button>
                                         <button
                                             class="experience-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center gap-2"
-                                            data-value="11-20">
-                                            11-20 years
-                                        </button>
+                                            data-value="11-20">11-20 years</button>
                                         <button
                                             class="experience-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center gap-2"
-                                            data-value="20+">
-                                            20-40 years
-                                        </button>
+                                            data-value="20+">20+ years</button>
                                     </div>
-
                                 </div>
 
                                 <div class="relative">
                                     <button
                                         class="filter-btn px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors flex items-center gap-2"
-                                        data-filter="rating" data-value="all">
-                                        All Rating
+                                        data-filter="rating" data-value="all">All Rating
                                         <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -408,22 +406,17 @@
                                             data-value="all">All Rating</button>
                                         <button
                                             class="rating-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center gap-2"
-                                            data-value="highest">
-                                            Highest First
-                                        </button>
+                                            data-value="highest">Highest First</button>
                                         <button
                                             class="rating-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center gap-2"
-                                            data-value="lowest">
-                                            Lowest First
-                                        </button>
+                                            data-value="lowest">Lowest First</button>
                                     </div>
                                 </div>
 
                                 <div class="relative">
                                     <button
                                         class="filter-btn px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors flex items-center gap-2"
-                                        data-filter = "profession" data-value="all">
-                                        All Profession
+                                        data-filter="profession" data-value="all">All Profession
                                         <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -431,12 +424,10 @@
                                         </svg>
                                     </button>
                                     <div
-                                        class="absolute hidden mt-1 max-w-[200px]   bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-10 max-h-60 overflow-y-auto">
+                                        class="absolute hidden mt-1 w-48 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-10 max-h-60 overflow-y-auto">
                                         <button
-                                            class="profession-option w-full max-w-[200px] text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center gap-2"
-                                            data-value="all">
-                                            All Profession
-                                        </button>
+                                            class="profession-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center gap-2"
+                                            data-value="all">All Profession</button>
                                     </div>
                                 </div>
                             </div>
@@ -445,18 +436,26 @@
 
                     <div id="teachersContainer"
                         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                       
+                        <!-- Teacher cards will be rendered here by JavaScript -->
                     </div>
-<!-- 
-                    editModal -->
-                   
-
                 </div>
 
                 <div id="studentsPage" class="page hidden">
-                    <div class="mb-8">
-                        <h2 class="text-gray-900 dark:text-white text-2xl font-bold mb-2">Students Management</h2>
-                        <p class="text-gray-600 dark:text-gray-400" id="studentsCount">Showing 50 of 50 students</p>
+                    <div class="flex items-center justify-between mb-8">
+                        <div>
+                            <h2 class="text-gray-900 dark:text-white text-2xl font-bold mb-2">Students Management</h2>
+                            <p class="text-gray-600 dark:text-gray-400" id="studentsCount">Showing 50 of 50 students</p>
+                        </div>
+                        <button onclick="openStudentModal()" data-slot="button"
+                            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 has-[>svg]:px-3 gap-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-plus h-5 w-5" aria-hidden="true">
+                                <path d="M5 12h14"></path>
+                                <path d="M12 5v14"></path>
+                            </svg>
+                            Add Student
+                        </button>
                     </div>
 
                     <div
@@ -469,8 +468,7 @@
                                 <div class="relative">
                                     <button
                                         class="student-filter-btn px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors flex items-center gap-2"
-                                        data-student-filter="gender" data-value="all">
-                                        All Gender
+                                        data-student-filter="gender" data-value="all">All Gender
                                         <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -481,19 +479,13 @@
                                         class="absolute hidden mt-1 w-48 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-10">
                                         <button
                                             class="student-gender-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center gap-2"
-                                            data-value="all">
-                                            All Gender
-                                        </button>
+                                            data-value="all">All Gender</button>
                                         <button
                                             class="student-gender-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center gap-2"
-                                            data-value="male">
-                                            Male Only
-                                        </button>
+                                            data-value="male">Male Only</button>
                                         <button
                                             class="student-gender-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center gap-2"
-                                            data-value="female">
-                                            Female Only
-                                        </button>
+                                            data-value="female">Female Only</button>
                                     </div>
                                 </div>
 
@@ -575,7 +567,9 @@
                     </div>
 
                     <div id="studentsContainer"
-                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        <!-- Student cards will be rendered here by JavaScript -->
+                    </div>
                 </div>
 
                 <div id="settingsPage" class="page hidden">
@@ -699,37 +693,307 @@
                         </div>
                     </div>
                 </div>
-            </main>
-            <div id="editModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden items-center justify-center">
-                <div class="bg-white p-6 rounded-xl w-[450px]">
-                    <h2 class="text-xl font-semibold text-center mb-4">Edit Teacher</h2>
-            
-                    <input type="hidden" id="edit-id">
-            
-                    <div class="space-y-2">
-                        <input id="edit-first" class="w-full border p-2 rounded" placeholder="First Name">
-                        <input id="edit-last" class="w-full border p-2 rounded" placeholder="Last Name">
-                        <input id="edit-subject" class="w-full border p-2 rounded" placeholder="gender">
-                        <input id="edit-phone" class="w-full border p-2 rounded" placeholder="Phone">
-                        <input id="edit-email" class="w-full border p-2 rounded" placeholder="Email">
-                        <input id="edit-telegram" class="w-full border p-2 rounded" placeholder="Telegram">
-                        <input id="edit-linkedin" class="w-full border p-2 rounded" placeholder="LinkedIn">
-                        <input id="edit-rating" class="w-full border p-2 rounded" placeholder="Rating" type="number">
-                    </div>
-            
-                     <div class="flex justify-end mt-4 gap-2">
-                        <button class="px-4 py-2 bg-gray-300 rounded" onclick="closeModal()">Cancel</button>
-                        <button class="px-4 py-2 bg-blue-600 text-white rounded" onclick="saveEdit()">Save</button>
-                    </div> 
+
+                <!-- Single Detail Page -->
+                <div id="detailPage" class="page hidden">
+                    <main class="p-8">
+                        <div>
+                            <!-- Back Button & Breadcrumb -->
+                            <div class="mb-6">
+                                <button onclick="goBackToList()"
+                                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 h-9 px-4 py-2 has-[>svg]:px-3 gap-2 mb-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-chevron-left h-4 w-4"
+                                        aria-hidden="true">
+                                        <path d="m15 18-6-6 6-6"></path>
+                                    </svg>
+                                    <span id="backButtonText">Back to Teachers</span>
+                                </button>
+                                <div class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+                                    <span class="cursor-pointer hover:text-blue-600"
+                                        onclick="switchPage('dashboardPage', this)">Dashboard</span>
+                                    <span>/</span>
+                                    <span class="cursor-pointer hover:text-blue-600" onclick="switchPage('teachersPage')" id="breadcrumbList">Teachers</span>
+                                    <span>/</span>
+                                    <span class="text-gray-900 dark:text-white" id="breadcrumbName">Loading...</span>
+                                </div>
+                            </div>
+
+                            <!-- Detail Content -->
+                            <div id="detailContent">
+                                <!-- Content will be loaded dynamically -->
+                            </div>
+                        </div>
+                    </main>
                 </div>
-            </div>
+
+                <div id="addTeacherModal"
+                    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 w-full max-w-md mx-4">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Add New Teacher</h3>
+                            <button onclick="closeTeacherModal()"
+                                class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <form id="addTeacherForm" class="space-y-4">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
+                                    <input type="text" name="name" required
+                                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Profession</label>
+                                    <input type="text" name="subject" required
+                                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Experience</label>
+                                    <input type="number" name="experience" min="0" max="50" required
+                                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Age</label>
+                                    <input type="number" name="age" min="20" max="70" required
+                                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Rating</label>
+                                    <input type="number" name="rating" min="1" max="5" step="0.1" required
+                                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Gender</label>
+                                    <select name="gender" required
+                                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">Select</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label
+                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Phone</label>
+                                <input type="tel" name="phone" required
+                                    class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+
+                            <div>
+                                <label
+                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+                                <input type="email" name="email" required
+                                    class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Telegram</label>
+                                    <input type="text" name="twitter"
+                                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        placeholder="@username">
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">LinkedIn</label>
+                                    <input type="text" name="linkedin"
+                                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        placeholder="linkedin.com/in/username">
+                                </div>
+                            </div>
+
+                            <div class="flex gap-3 pt-4">
+                                <button type="button" onclick="closeTeacherModal()"
+                                    class="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">Cancel</button>
+                                <button type="submit"
+                                    class="flex-1 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl">Add
+                                    Teacher</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="addStudentModal"
+                    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 w-full max-w-md mx-4">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Add New Student</h3>
+                            <button onclick="closeStudentModal()"
+                                class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <form id="addStudentForm" class="space-y-4">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
+                                    <input type="text" name="name" required
+                                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Gender</label>
+                                    <input type="number" name="grade" min="1" max="12" required
+                                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Age</label>
+                                    <input type="number" name="age" min="6" max="18" required
+                                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Label</label>
+                                    <select name="gender" required
+                                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                        <option value="">Select</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Rating</label>
+                                    <input type="number" name="rating" min="1" max="5" step="0.1" required
+                                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Coins</label>
+                                    <input type="number" name="coins" min="0" max="500" required
+                                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label
+                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Phone</label>
+                                <input type="tel" name="phone" required
+                                    class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                            </div>
+
+                            <div>
+                                <label
+                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+                                <input type="email" name="email" required
+                                    class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Telegram</label>
+                                    <input type="text" name="twitter"
+                                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                        placeholder="@username">
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">LinkedIn</label>
+                                    <input type="text" name="linkedin"
+                                        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                        placeholder="linkedin.com/in/username">
+                                </div>
+                            </div>
+
+                            <div class="flex gap-3 pt-4">
+                                <button type="button" onclick="closeStudentModal()"
+                                    class="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">Cancel</button>
+                                <button type="submit"
+                                    class="flex-1 px-4 py-2  text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl">Add
+                                    Student</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+
+                        <!-- EDIT MODAL -->
+                        <div id="editModal" class="fixed inset-0 hidden bg-black/60 justify-center items-center">
+                            <div class="bg-gradient-to-br text-black dark:text-gray-wihte p-6 rounded-xl w-[400px]">
+                                <h2 class="text-xl font-bold mb-4 bg-white p-2 dark:text-grey-400">Edit Teacher</h2>
+                        
+                                <input id="editFirst" class="border p-2 w-full mb-2" placeholder="First Name">
+                                <input id="editLast" class="border p-2 w-full mb-2" placeholder="Last Name">
+                                <input id="editAge" class="border p-2 w-full mb-2" placeholder="Age" type="number">
+                                <input id="editPhone" class="border p-2 w-full mb-2" placeholder="Phone">
+                                <input id="editEmail" class="border p-2 w-full mb-2" placeholder="Email">
+                                <input id="editTelegram" class="border p-2 w-full mb-2" placeholder="Telegram" type="number"> 
+                            
+                             
+                        
+                                <div class="flex justify-end gap-3 mt-4">
+                                    <button onclick="closeEditModal()" class="px-3 py-1 bg-gray-300 rounded">Cancel</button>
+                                    <button onclick="saveEdit()" class="px-3 py-1 bg-blue-600 text-white rounded">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- <div id="editModal2" class="hidden fixed inset-0 bg-black/40 flex items-center justify-center">
+                        <div class="bg-white p-6 rounded-xl w-[400px] space-y-3">
+                            <input id="editId" type="hidden">
+                    
+                            <input id="editFirstname" class="border p-2 w-full rounded" placeholder="First name">
+                            <input id="editLastname" class="border p-2 w-full rounded" placeholder="Last name">
+                            <input id="editAge" class="border p-2 w-full rounded" placeholder="Age">
+                            <input id="editGrade" class="border p-2 w-full rounded" placeholder="Grade">
+                    
+                            <div class="flex justify-end gap-3">
+                                <button onclick="closeEditModal()" class="px-3 py-1 border rounded">
+                                    Cancel
+                                </button>
+                                <button onclick="saveStudentEdit()" class="px-3 py-1 bg-purple-500 text-white rounded">
+                                    Save
+                                </button>
+                            </div>
+                        </div>
+                    </div> -->
+
+
+
+            </main>
         </div>
     </div>
 
     <script src="./js/main.js"></script>
-    <script src="./js/student.id.js"></script>
     <script src="./js/teachersid.js"></script>
-
+    <script src="./js/student.id.js"></script>
+    <script src="./js/singil.js"></script>
 </body>
 
 </html>

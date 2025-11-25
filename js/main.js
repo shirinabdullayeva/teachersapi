@@ -1,3 +1,11 @@
+let loading = document.getElementById("loading");
+
+window.addEventListener("load", function () {
+    loading.classList.add("hidden")
+})
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
     let themeToggle = document.getElementById('themeToggle');
     let sidebarToggle = document.querySelector('aside .flex.items-center.justify-between button');

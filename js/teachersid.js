@@ -1,446 +1,6 @@
 
-let teachersData = [
-    {
-        "createdAt": "2025-11-23T04:04:00.548Z",
-        "avatar": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/27.jpg",
-        "FirstName": "Brayan",
-        "LastName": "Kozey",
-        "experience": 68,
-        "Age": 10,
-        "Birthday": 1763915461,
-        "gender": "T* woman",
-        "profession": "profession 1",
-        "rating": 18,
-        "salary": 12,
-        "phone": "1-712-593-7636 x1489",
-        "telegram": "41131",
-        "email": "Otha69@gmail.com",
-        "linkedin": "61041",
-        "id": "1"
-    },
-    {
-        "createdAt": "2025-11-22T22:52:17.930Z",
-        "avatar": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/89.jpg",
-        "FirstName": "Luisa",
-        "LastName": "Anderson",
-        "experience": 68,
-        "Age": 0,
-        "Birthday": 1763915401,
-        "gender": "Cisgender man",
-        "profession": "profession 2",
-        "rating": 43,
-        "salary": 36,
-        "phone": "1-851-806-1046 x12710",
-        "telegram": "23804",
-        "email": "Cleta.Weimann@gmail.com",
-        "linkedin": "860",
-        "id": "2"
-    },
-    {
-        "createdAt": "2025-11-22T19:21:00.298Z",
-        "avatar": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/21.jpg",
-        "FirstName": "Rodger",
-        "LastName": "Kerluke",
-        "experience": 79,
-        "Age": 54,
-        "Birthday": 1763915341,
-        "gender": "T* woman",
-        "profession": "profession 3",
-        "rating": 16,
-        "salary": 88,
-        "phone": "501.273.7380",
-        "telegram": "8679",
-        "email": "Ethan92@hotmail.com",
-        "linkedin": "57485",
-        "id": "3"
-    },
-    {
-        "createdAt": "2025-11-23T15:56:36.915Z",
-        "avatar": "https://avatars.githubusercontent.com/u/62546207",
-        "FirstName": "Don",
-        "LastName": "Skiles",
-        "experience": 76,
-        "Age": 21,
-        "Birthday": 1763915281,
-        "gender": "Two-spirit",
-        "profession": "profession 4",
-        "rating": 23,
-        "salary": 61,
-        "phone": "289.335.3951 x2875",
-        "telegram": "4693",
-        "email": "Theresia14@hotmail.com",
-        "linkedin": "35138",
-        "id": "4"
-    },
-    {
-        "createdAt": "2025-11-23T05:47:57.376Z",
-        "avatar": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/94.jpg",
-        "FirstName": "Emelie",
-        "LastName": "Hyatt",
-        "experience": 76,
-        "Age": 46,
-        "Birthday": 1763915221,
-        "gender": "Other",
-        "profession": "profession 5",
-        "rating": 96,
-        "salary": 48,
-        "phone": "1-389-812-2386 x72694",
-        "telegram": "48815",
-        "email": "Ilene37@yahoo.com",
-        "linkedin": "245",
-        "id": "5"
-    },
-    {
-        "createdAt": "2025-11-23T05:23:33.962Z",
-        "avatar": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/87.jpg",
-        "FirstName": "Jacklyn",
-        "LastName": "Koelpin-Friesen",
-        "experience": 88,
-        "Age": 70,
-        "Birthday": 1763915161,
-        "gender": "FTM",
-        "profession": "profession 6",
-        "rating": 41,
-        "salary": 21,
-        "phone": "1-687-636-7928 x474",
-        "telegram": "5678",
-        "email": "Weldon90@yahoo.com",
-        "linkedin": "81544",
-        "id": "6"
-    },
-    {
-        "createdAt": "2025-11-23T08:40:55.156Z",
-        "avatar": "https://avatars.githubusercontent.com/u/37311951",
-        "FirstName": "Aryanna",
-        "LastName": "Gislason",
-        "experience": 69,
-        "Age": 72,
-        "Birthday": 1763915101,
-        "gender": "Transgender female",
-        "profession": "profession 7",
-        "rating": 43,
-        "salary": 90,
-        "phone": "(329) 579-3987 x06913",
-        "telegram": "79723",
-        "email": "Glenda_Hackett@gmail.com",
-        "linkedin": "4004",
-        "id": "7"
-    },
-    {
-        "createdAt": "2025-11-22T18:15:26.433Z",
-        "avatar": "https://avatars.githubusercontent.com/u/97170157",
-        "FirstName": "Adalberto",
-        "LastName": "Cormier",
-        "experience": 45,
-        "Age": 37,
-        "Birthday": 1763915041,
-        "gender": "Female to male transsexual man",
-        "profession": "profession 8",
-        "rating": 53,
-        "salary": 69,
-        "phone": "1-260-739-5024",
-        "telegram": "28898",
-        "email": "Virginia.Schultz43@hotmail.com",
-        "linkedin": "3117",
-        "id": "8"
-    },
-    {
-        "createdAt": "2025-11-22T21:41:06.766Z",
-        "avatar": "https://avatars.githubusercontent.com/u/44165880",
-        "FirstName": "Serenity",
-        "LastName": "Cruickshank",
-        "experience": 71,
-        "Age": 47,
-        "Birthday": 1763914981,
-        "gender": "Cisgender woman",
-        "profession": "profession 9",
-        "rating": 17,
-        "salary": 30,
-        "phone": "765-253-4070 x251",
-        "telegram": "960",
-        "email": "Carolanne_Kuhic@gmail.com",
-        "linkedin": "406",
-        "id": "9"
-    },
-    {
-        "createdAt": "2025-11-23T02:12:25.838Z",
-        "avatar": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/62.jpg",
-        "FirstName": "Dena",
-        "LastName": "Schmitt",
-        "experience": 29,
-        "Age": 59,
-        "Birthday": 1763914921,
-        "gender": "Demi-boy",
-        "profession": "profession 10",
-        "rating": 78,
-        "salary": 1,
-        "phone": "612.420.6723",
-        "telegram": "1271",
-        "email": "Delbert78@gmail.com",
-        "linkedin": "7208",
-        "id": "10"
-    },
-    {
-        "createdAt": "2025-11-23T11:05:24.005Z",
-        "avatar": "https://avatars.githubusercontent.com/u/13201889",
-        "FirstName": "Dustin",
-        "LastName": "Buckridge",
-        "experience": 13,
-        "Age": 26,
-        "Birthday": 1763914861,
-        "gender": "Intersex woman",
-        "profession": "profession 11",
-        "rating": 11,
-        "salary": 53,
-        "phone": "540.848.9231",
-        "telegram": "891",
-        "email": "Jackie35@yahoo.com",
-        "linkedin": "9850",
-        "id": "11"
-    },
-    {
-        "createdAt": "2025-11-22T20:36:56.883Z",
-        "avatar": "https://avatars.githubusercontent.com/u/45301702",
-        "FirstName": "Silas",
-        "LastName": "Cartwright",
-        "experience": 70,
-        "Age": 54,
-        "Birthday": 1763914801,
-        "gender": "Bigender",
-        "profession": "profession 12",
-        "rating": 8,
-        "salary": 53,
-        "phone": "997-525-9055 x779",
-        "telegram": "2847",
-        "email": "Mallory84@yahoo.com",
-        "linkedin": "4533",
-        "id": "12"
-    },
-    {
-        "createdAt": "2025-11-23T09:10:20.654Z",
-        "avatar": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/86.jpg",
-        "FirstName": "Audreanne",
-        "LastName": "Blick",
-        "experience": 86,
-        "Age": 84,
-        "Birthday": 1763914741,
-        "gender": "Cis female",
-        "profession": "profession 13",
-        "rating": 49,
-        "salary": 3,
-        "phone": "576-229-3897 x90634",
-        "telegram": "7804",
-        "email": "Lue.Bogisich5@yahoo.com",
-        "linkedin": "630",
-        "id": "13"
-    },
-    {
-        "createdAt": "2025-11-23T02:16:15.631Z",
-        "avatar": "https://avatars.githubusercontent.com/u/42717648",
-        "FirstName": "Eldon",
-        "LastName": "Thiel-Terry",
-        "experience": 61,
-        "Age": 38,
-        "Birthday": 1763914681,
-        "gender": "Cis male",
-        "profession": "profession 14",
-        "rating": 78,
-        "salary": 28,
-        "phone": "549.762.1203 x86478",
-        "telegram": "8696",
-        "email": "Sandrine_Wisoky@yahoo.com",
-        "linkedin": "7349",
-        "id": "14"
-    },
-    {
-        "createdAt": "2025-11-23T00:54:17.516Z",
-        "avatar": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/94.jpg",
-        "FirstName": "Brenden",
-        "LastName": "Kuhn",
-        "experience": 48,
-        "Age": 55,
-        "Birthday": 1763914621,
-        "gender": "Trans man",
-        "profession": "profession 15",
-        "rating": 9,
-        "salary": 33,
-        "phone": "(531) 489-4698 x86668",
-        "telegram": "5993",
-        "email": "Hassan.Bernier@yahoo.com",
-        "linkedin": "897",
-        "id": "15"
-    },
-    {
-        "createdAt": "2025-11-22T19:30:50.379Z",
-        "avatar": "https://avatars.githubusercontent.com/u/57045236",
-        "FirstName": "Lawson",
-        "LastName": "Jacobi",
-        "experience": 55,
-        "Age": 86,
-        "Birthday": 1763914561,
-        "gender": "Cisgender woman",
-        "profession": "profession 16",
-        "rating": 33,
-        "salary": 42,
-        "phone": "(554) 813-2059 x63139",
-        "telegram": "310",
-        "email": "Kieran_Thiel@hotmail.com",
-        "linkedin": "2553",
-        "id": "16"
-    },
-    {
-        "createdAt": "2025-11-23T14:35:59.826Z",
-        "avatar": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/11.jpg",
-        "FirstName": "Carmelo",
-        "LastName": "Weimann",
-        "experience": 21,
-        "Age": 75,
-        "Birthday": 1763914501,
-        "gender": "Transgender person",
-        "profession": "profession 17",
-        "rating": 60,
-        "salary": 66,
-        "phone": "255-339-0252 x88551",
-        "telegram": "3727",
-        "email": "Arch18@gmail.com",
-        "linkedin": "4195",
-        "id": "17"
-    },
-    {
-        "createdAt": "2025-11-23T00:27:34.613Z",
-        "avatar": "https://avatars.githubusercontent.com/u/98260074",
-        "FirstName": "Kathleen",
-        "LastName": "Rempel-O'Kon",
-        "experience": 72,
-        "Age": 62,
-        "Birthday": 1763914441,
-        "gender": "Transsexual person",
-        "profession": "profession 18",
-        "rating": 6,
-        "salary": 55,
-        "phone": "591-595-8760 x0520",
-        "telegram": "82805",
-        "email": "Osvaldo15@hotmail.com",
-        "linkedin": "946",
-        "id": "18"
-    },
-    {
-        "createdAt": "2025-11-22T17:21:49.643Z",
-        "avatar": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/57.jpg",
-        "FirstName": "Darren",
-        "LastName": "Schinner",
-        "experience": 13,
-        "Age": 64,
-        "Birthday": 1763914381,
-        "gender": "Androgynous",
-        "profession": "profession 19",
-        "rating": 27,
-        "salary": 63,
-        "phone": "(384) 543-4556 x91035",
-        "telegram": "626",
-        "email": "Howard.Stanton-Wiza@yahoo.com",
-        "linkedin": "9804",
-        "id": "19"
-    },
-    {
-        "createdAt": "2025-11-23T01:21:00.711Z",
-        "avatar": "https://avatars.githubusercontent.com/u/34294199",
-        "FirstName": "Dandre",
-        "LastName": "Mueller",
-        "experience": 38,
-        "Age": 46,
-        "Birthday": 1763914321,
-        "gender": "Demi-girl",
-        "profession": "profession 20",
-        "rating": 91,
-        "salary": 1,
-        "phone": "654-265-2516 x50015",
-        "telegram": "5741",
-        "email": "Mohamed49@gmail.com",
-        "linkedin": "507",
-        "id": "20"
-    },
-    {
-        "createdAt": "2025-11-23T01:00:31.023Z",
-        "avatar": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/10.jpg",
-        "FirstName": "Mireille",
-        "LastName": "Kerluke",
-        "experience": 14,
-        "Age": 75,
-        "Birthday": 1763914261,
-        "gender": "Androgyne",
-        "profession": "profession 21",
-        "rating": 60,
-        "salary": 57,
-        "phone": "1-622-509-4084 x44171",
-        "telegram": "964",
-        "email": "Quincy.Dare@yahoo.com",
-        "linkedin": "8677",
-        "id": "21"
-    },
-    {
-        "createdAt": "2025-11-22T23:06:30.236Z",
-        "avatar": "https://avatars.githubusercontent.com/u/79626937",
-        "FirstName": "Florencio",
-        "LastName": "Hand",
-        "experience": 54,
-        "Age": 18,
-        "Birthday": 1763914201,
-        "gender": "Trigender",
-        "profession": "profession 22",
-        "rating": 74,
-        "salary": 29,
-        "phone": "1-556-779-2431 x51182",
-        "telegram": "492",
-        "email": "Edmund69@hotmail.com",
-        "linkedin": "572",
-        "id": "22"
-    },
-    {
-        "createdAt": "2025-11-23T15:35:52.428Z",
-        "avatar": "https://avatars.githubusercontent.com/u/83313989",
-        "FirstName": "Krystina",
-        "LastName": "Schuster",
-        "experience": 27,
-        "Age": 54,
-        "Birthday": 1763914141,
-        "gender": "Transgender female",
-        "profession": "profession 23",
-        "rating": 87,
-        "salary": 56,
-        "phone": "574.573.0299 x1493",
-        "telegram": "888",
-        "email": "Brianne.Hartmann@hotmail.com",
-        "linkedin": "458",
-        "id": "23"
-    },
-    {
-        "createdAt": "2025-11-23T13:06:51.727Z",
-        "avatar": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/52.jpg",
-        "FirstName": "Winnifred",
-        "LastName": "Brakus",
-        "experience": 100,
-        "Age": 86,
-        "Birthday": 1763914081,
-        "gender": "Intersex man",
-        "profession": "profession 24",
-        "rating": 70,
-        "salary": 53,
-        "phone": "1-327-930-1070 x6476",
-        "telegram": "6540",
-        "email": "Lula_Corwin@hotmail.com",
-        "linkedin": "26519",
-        "id": "24"
-    }
-]
 
-
-
-
-
-
-
-
+let teachersData = [];
 let currentFilters = {
     gender: 'all',
     experience: 'all',
@@ -448,31 +8,243 @@ let currentFilters = {
     profession: 'all',
     search: ''
 };
+function getInitials(name) {
+    if (!name) return '??';
+    return name.split(' ')
+        .map(word => word.charAt(0))
+        .join('')
+        .toUpperCase()
+        .substring(0, 2);
+}
 
+let API_URL = 'https://6921b86c512fb4140be12281.mockapi.io/teachers';
 
-
-document.addEventListener("DOMContentLoaded", () => {
-    renderTeachers(teachersData);
-    updateTeachersCount(teachersData.length, teachersData.length);
+document.addEventListener("DOMContentLoaded", async () => {
+    await loadTeachersData();
     initializeFilters();
     setupSearch();
 });
+
+async function loadTeachersData() {
+    try {
+        showLoadingState();
+
+        let response = await fetch(API_URL);
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        let data = await response.json();
+
+        data = data.map(teacher => ({
+            ...teacher,
+            rating: normalizeRating(teacher.rating)
+        }));
+
+        if (!Array.isArray(data)) {
+            throw new Error('Invalid data format: Expected array');
+        }
+
+        if (data.length === 0) {
+            console.warn('No teachers data found in API');
+        }
+
+        teachersData = data;
+        renderTeachers(teachersData);
+        updateTeachersCount(teachersData.length, teachersData.length);
+
+    } catch (error) {
+        console.error('Error loading teachers data:', error);
+        showErrorState('Failed to load teachers data. Please try again later.');
+        teachersData = [];
+    } finally {
+        hideLoadingState();
+    }
+}
+
+function normalizeRating(rating) {
+    if (rating === null || rating === undefined) {
+        return 3.0;
+    }
+
+    let numRating = typeof rating === 'string' ? parseFloat(rating) : rating;
+
+    if (numRating >= 1 && numRating <= 5) {
+        return parseFloat(numRating.toFixed(1));
+    }
+
+    if (numRating >= 0 && numRating <= 100) {
+        let normalized = 1 + (numRating / 100) * 4;
+        return parseFloat(normalized.toFixed(1));
+    }
+
+    return Math.min(5, parseFloat(numRating.toFixed(1)));
+}
+
+function normalizeGender(gender) {
+    console.log('Raw gender value:', gender, 'Type:', typeof gender);
+
+    if (gender === null || gender === undefined) {
+        return Math.random() > 0.5 ? 'Male' : 'Female';
+    }
+
+    if (typeof gender === 'boolean') {
+        return gender ? 'Male' : 'Female';
+    }
+
+    if (typeof gender === 'number') {
+        return gender === 1 ? 'Male' : 'Female';
+    }
+
+    if (typeof gender === 'string') {
+        const genderLower = gender.toLowerCase();
+
+        if (genderLower.includes('male') || genderLower === 'm' || genderLower === 'man' || genderLower === 'true' || genderLower === '1') {
+            return 'Male';
+        }
+        if (genderLower.includes('female') || genderLower === 'f' || genderLower === 'woman' || genderLower === 'women' || genderLower === 'false' || genderLower === '0') {
+            return 'Female';
+        }
+    }
+
+    return Math.random() > 0.5 ? 'Male' : 'Female';
+}
+
+function showLoadingState() {
+    let container = document.getElementById("teachersContainer");
+    if (container) {
+        container.innerHTML = `
+            <div class="col-span-full flex justify-center items-center py-12">
+                <div class="text-center">
+                    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
+                    <p class="text-gray-600 dark:text-gray-400">Loading teachers...</p>
+                </div>
+            </div>
+        `;
+    }
+}
+
+function showErrorState(message) {
+    let container = document.getElementById("teachersContainer");
+    if (container) {
+        container.innerHTML = `
+            <div class="col-span-full flex justify-center items-center py-12">
+                <div class="text-center text-red-600 dark:text-red-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                    </svg>
+                    <p class="text-lg font-medium mb-2">Oops! Something went wrong</p>
+                    <p class="text-sm">${message}</p>
+                    <button onclick="loadTeachersData()" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors">
+                        Try Again
+                    </button>
+                </div>
+            </div>
+        `;
+    }
+}
+
+function hideLoadingState() {
+}
+
+async function addTeacherToAPI(teacherData) {
+    try {
+        let response = await fetch(API_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(teacherData)
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        let newTeacher = await response.json();
+        return newTeacher;
+
+    } catch (error) {
+        console.error('Error adding teacher:', error);
+        throw error;
+    }
+}
+
+async function updateTeacherInAPI(teacherId, teacherData) {
+    try {
+        let response = await fetch(`${API_URL}/${teacherId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(teacherData)
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        let updatedTeacher = await response.json();
+        return updatedTeacher;
+
+    } catch (error) {
+        console.error('Error updating teacher:', error);
+        throw error;
+    }
+}
+
+async function deleteTeacherFromAPI(teacherId) {
+    try {
+        let response = await fetch(`${API_URL}/${teacherId}`, {
+            method: 'DELETE'
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        return true;
+
+    } catch (error) {
+        console.error('Error deleting teacher:', error);
+        throw error;
+    }
+}
 
 function renderTeachers(teachers = teachersData) {
     let container = document.getElementById("teachersContainer");
     if (!container) return;
 
+    if (teachers.length === 0) {
+        container.innerHTML = `
+            <div class="col-span-full flex justify-center items-center py-12">
+                <div class="text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+                    </svg>
+                    <p class="text-gray-600 dark:text-gray-400 text-lg">No teachers found</p>
+                    <p class="text-gray-500 dark:text-gray-500 text-sm">Try adjusting your filters or search terms</p>
+                </div>
+            </div>
+        `;
+        return;
+    }
+
     container.innerHTML = teachers.map(teacher => `
-      
-        <div class="teacher-card flex flex-col gap-6 rounded-xl border p-6 cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1  bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 group">
-            <div class="flex flex-col items-center text-center mb-4">
-                <span class="relative flex size-10 shrink-0 overflow-hidden rounded-full h-20 w-20 mb-3 ring-4 ring-blue-100 dark:ring-blue-900">
-                    <div class="w-full h-full flex items-center justify-center text-2xl font-bold text-gray-900 dark:text-white bg-gray-300 dark:bg-gray-700 rounded-full">
-                    
-                      <img src="${teacher.avatar}" alt="${teacher.name}" class="w-full h-full object-cover rounded-full">
-                    
-                    </div>
-                </span>
+        <div class="teacher-card flex flex-col gap-6 rounded-xl border p-6 cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 group" 
+         onclick="openDetailPage('teacher', '${teacher.id}')">
+        <div class="flex flex-col items-center text-center mb-4">
+        <div class="relative h-20 w-20 mb-3">
+        ${teacher.avatar ?
+        `<img src="${teacher.avatar}" alt="${teacher.FirstName}" class="w-full h-full rounded-full object-cover ring-4 ring-blue-100 dark:ring-blue-900" />` :
+            `<div class="w-full h-full rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-2xl font-bold ring-4 ring-blue-100 dark:ring-blue-900">
+            ${getInitials(teacher.LastName)}
+            </div>`
+            
+        }
+        </div>
+
 
                 <h3 class="text-gray-900 dark:text-white mb-1">${teacher.FirstName} ${teacher.LastName}</h3>
 
@@ -492,7 +264,7 @@ function renderTeachers(teachers = teachersData) {
                         <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-users h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16 3.128a4 4 0 0 1 0 7.744"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
                             <circle cx="9" cy="7" r="4"></circle>
                         </svg>
                         ${teacher.Age}y
@@ -505,6 +277,14 @@ function renderTeachers(teachers = teachersData) {
                     </svg>
                     <span class="text-gray-900 dark:text-white">${teacher.rating}</span>
                 </div>
+
+                <div class="w-full space-y-2 my-3">
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                        <div class="bg-black dark:bg-white h-2 rounded-full transition-all duration-300" 
+                             style="width: ${(teacher.rating / 5) * 100}%">
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="space-y-2 mb-4 text-sm text-gray-600 dark:text-gray-400">
@@ -513,28 +293,34 @@ function renderTeachers(teachers = teachersData) {
                     ${teacher.phone}
                 </div>
                 <div class="flex items-center gap-2">
+                  <svg class="lucide lucide-send h-4 w-4 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg>
+                    ${teacher.telegram} 
+                </div>
+                <div class="flex items-center gap-2">
                     <svg class="lucide lucide-mail h-4 w-4 text-green-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>
                     ${teacher.email}
                 </div>
                 <div class="flex items-center gap-2">
                     <svg class="lucide lucide-send h-4 w-4 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg>
-                    ${teacher.telegram}
+                    ${teacher.profession}
                 </div>
                 <div class="flex items-center gap-2">
                     <svg class="lucide lucide-linkedin h-4 w-4 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                    ${teacher.linkedin || teacher.LastName}
+                    ${teacher.linkedin}
                 </div>
             </div>
-            <div class ="flex justify-center gap-20 mt-4 opacity-0 translate-y-4 group-hover:opacity-100 group:hover:translate-y-0 translation-all duration-300">
-            <button onclick="alert('contacting ${teacher.id}')" class="text-blue-600">Edit</button>
-            <button onclick="alert('concating ${teacher.id}')" class="text-red-800">Delete</button>
+ <div class ="flex justify-center gap-20 mt-4 opacity-0 translate-y-4
+group-hover:opacity-100 group:hover:translate-y-0 transition-all duration-300">
 
-            </div>
+    <button onclick="event.stopPropagation(); openEditModal('${teacher.id}')" class="text-blue-600">Edit</button>
 
+    <button onclick="event.stopPropagation(); deleteTeacher('${teacher.id}')" class="text-red-800">Delete</button>
+
+</div>
         </div>
-    
     `).join("");
 }
+
 
 function updateTeachersCount(showing, total) {
     let el = document.getElementById("teachersCount");
@@ -543,6 +329,7 @@ function updateTeachersCount(showing, total) {
 
 function setupSearch() {
     let searchInput = document.getElementById("teacherSearch");
+
     if (searchInput) {
         searchInput.addEventListener("input", () => {
             currentFilters.search = searchInput.value.toLowerCase().trim();
@@ -558,26 +345,26 @@ function initializeFilters() {
 }
 
 function populateProfessionOptions() {
-    const professionContainer = document.querySelector('.profession-option').parentElement;
-    const professions = [...new Set(teachersData.map(teacher => teacher.gender))];
+    let professionContainer = document.querySelector('.profession-option').parentElement;
+    let professions = [...new Set(teachersData.map(teacher => teacher.subject))];
 
-    professions.forEach(gender => {
-        const button = document.createElement('button');
+    professions.forEach(profession => {
+        let button = document.createElement('button');
         button.className = 'profession-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700';
-        button.setAttribute('data-value', gender);
-        button.textContent = gender;
+        button.setAttribute('data-value', profession);
+        button.textContent = profession;
         professionContainer.appendChild(button);
     });
 }
 
 function setupFilterDropdowns() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
+    let filterButtons = document.querySelectorAll('.filter-btn');
 
     filterButtons.forEach(button => {
         button.addEventListener('click', (e) => {
             e.stopPropagation();
-            const dropdown = button.nextElementSibling;
-            const isVisible = dropdown.style.display === 'block';
+            let dropdown = button.nextElementSibling;
+            let isVisible = dropdown.style.display === 'block';
 
             document.querySelectorAll('.absolute').forEach(dropdown => {
                 dropdown.style.display = 'none';
@@ -597,7 +384,7 @@ function setupFilterDropdowns() {
 function setupFilterHandlers() {
     document.querySelectorAll('.gender-option').forEach(option => {
         option.addEventListener('click', (e) => {
-            const value = e.target.getAttribute('data-value');
+            let value = e.target.getAttribute('data-value');
             currentFilters.gender = value;
             updateFilterButton('gender', value, getGenderDisplayText(value));
             applyFilters();
@@ -606,7 +393,7 @@ function setupFilterHandlers() {
 
     document.querySelectorAll('.experience-option').forEach(option => {
         option.addEventListener('click', (e) => {
-            const value = e.target.getAttribute('data-value');
+            let value = e.target.getAttribute('data-value');
             currentFilters.experience = value;
             updateFilterButton('experience', value, getExperienceDisplayText(value));
             applyFilters();
@@ -615,7 +402,7 @@ function setupFilterHandlers() {
 
     document.querySelectorAll('.rating-option').forEach(option => {
         option.addEventListener('click', (e) => {
-            const value = e.target.getAttribute('data-value');
+            let value = e.target.getAttribute('data-value');
             currentFilters.rating = value;
             updateFilterButton('rating', value, getRatingDisplayText(value));
             applyFilters();
@@ -624,7 +411,7 @@ function setupFilterHandlers() {
 
     document.addEventListener('click', (e) => {
         if (e.target.classList.contains('profession-option')) {
-            const value = e.target.getAttribute('data-value');
+            let value = e.target.getAttribute('data-value');
             currentFilters.profession = value;
             updateFilterButton('profession', value, getProfessionDisplayText(value));
             applyFilters();
@@ -633,18 +420,18 @@ function setupFilterHandlers() {
 }
 
 function updateFilterButton(filterType, value, displayText) {
-    const button = document.querySelector(`[data-filter="${filterType}"]`);
+    let button = document.querySelector(`[data-filter="${filterType}"]`);
     button.textContent = displayText;
     button.setAttribute('data-value', value);
 }
 
 function getGenderDisplayText(value) {
-    const texts = { all: 'All Gender', male: 'Male Only', female: 'Female Only' };
+    let texts = { all: 'All Gender', male: 'Male Only', female: 'Female Only' };
     return texts[value] || 'All Gender';
- }
+}
 
 function getExperienceDisplayText(value) {
-    const texts = {
+    let texts = {
         all: 'All Experience',
         '0-5': '0-5 years',
         '6-10': '6-10 years',
@@ -655,7 +442,7 @@ function getExperienceDisplayText(value) {
 }
 
 function getRatingDisplayText(value) {
-    const texts = { all: 'All Rating', highest: 'Highest First', lowest: 'Lowest First' };
+    let texts = { all: 'All Rating', highest: 'Highest First', lowest: 'Lowest First' };
     return texts[value] || 'All Rating';
 }
 
@@ -670,7 +457,7 @@ function applyFilters() {
         filteredTeachers = filteredTeachers.filter(teacher =>
             teacher.name.toLowerCase().includes(currentFilters.search) ||
             teacher.email.toLowerCase().includes(currentFilters.search) ||
-            teacher.subject.toLowerCase().includes(currentFilters.search)
+            teacher.gender.toLowerCase().includes(currentFilters.search)
         );
     }
 
@@ -682,7 +469,7 @@ function applyFilters() {
 
     if (currentFilters.experience !== 'all') {
         filteredTeachers = filteredTeachers.filter(teacher => {
-            const exp = teacher.experience;
+            let exp = teacher.experience;
             switch (currentFilters.experience) {
                 case '0-5': return exp >= 0 && exp <= 5;
                 case '6-10': return exp >= 6 && exp <= 10;
@@ -714,69 +501,170 @@ function applyFilters() {
 }
 
 
-function openEditModal(id) {
-    const teacher = teachersData.find(teacher => teacher.id === id);
+function openTeacherModal() {
+    const modal = document.getElementById('addTeacherModal');
+    modal.classList.remove('hidden');
 
-    document.getElementById("edit-id").value = id;
-    document.getElementById("edit-first").value = teacher.FirstName;
-    document.getElementById("edit-last").value = teacher.LastName;
-    document.getElementById("edit-subject").value = teacher.gender;
-    document.getElementById("edit-phone").value = teacher.phone;
-    document.getElementById("edit-email").value = teacher.email;
-    document.getElementById("edit-telegram").value = teacher.telegram;
-    document.getElementById("edit-linkedin").value = teacher.linkedin;
-    document.getElementById("edit-rating").value = teacher.rating;
+    document.body.style.overflow = 'hidden';
+
+    document.addEventListener('keydown', handleTeacherEscapeKey);
+}
+
+function closeTeacherModal() {
+    const modal = document.getElementById('addTeacherModal');
+    modal.classList.add('hidden');
+
+    document.body.style.overflow = '';
+
+    document.removeEventListener('keydown', handleTeacherEscapeKey);
+    document.getElementById('addTeacherForm').reset();
+}
+
+function handleTeacherEscapeKey(e) {
+    if (e.key === 'Escape') {
+        closeTeacherModal();
+    }
+}
+
+function handleTeacherBackdropClick(e) {
+    if (e.target.id === 'addTeacherModal') {
+        closeTeacherModal();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const teacherForm = document.getElementById('addTeacherForm');
+    const teacherModal = document.getElementById('addTeacherModal');
+
+    if (teacherForm && teacherModal) {
+        teacherModal.addEventListener('click', handleTeacherBackdropClick);
+
+        teacherModal.querySelector('.bg-white').addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+
+        teacherForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const formData = new FormData(e.target);
+            const teacherData = {
+                name: formData.get('name'),
+                subject: formData.get('subject'),
+                experience: parseInt(formData.get('experience')),
+                age: parseInt(formData.get('age')),
+                rating: parseFloat(formData.get('rating')),
+                gender: formData.get('gender'),
+                phone: formData.get('phone'),
+                email: formData.get('email'),
+                telegram: formData.get('telegram') || `@${formData.get('name').toLowerCase().replace(/\s+/g, '')}`,
+                linkedin: formData.get('linkedin') || `linkedin.com/in/${formData.get('name').toLowerCase().replace(/\s+/g, '-')}`,
+                avatar: `https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/27.jpg?seed=${formData.get('name')}`
+            };
+
+            try {
+                const newTeacher = await addTeacherToAPI(teacherData);
+                teachersData.push(newTeacher);
+                renderTeachers(teachersData);
+                updateTeachersCount(teachersData.length, teachersData.length);
+                closeTeacherModal();
+
+                showToast('Teacher added successfully!', 'success');
+            } catch (error) {
+                showToast('Failed to add teacher. Please try again.', 'error');
+            }
+        });
+    }
+});
+
+document.getElementById('addTeacherForm')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+   
+
+    let formData = new FormData(e.target);
+    let teacherData = {
+        name: formData.get('name'),
+        subject: formData.get('subject'),
+        experience: parseInt(formData.get('experience')),
+        age: parseInt(formData.get('age')),
+        rating: parseFloat(formData.get('rating')),
+        gender: formData.get('gender'),
+        phone: formData.get('phone'),
+        email: formData.get('email'),
+        telegram: formData.get('telegram') || `@${formData.get('name').toLowerCase().replace(/\s+/g, '')}`,
+        linkedin: formData.get('linkedin') || `linkedin.com/in/${formData.get('name').toLowerCase().replace(/\s+/g, '-')}`,
+        avatar: `https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/27.jpg?seed=${formData.get('name')}`
+    };
+
+    try {
+        let newTeacher = await addTeacherToAPI(teacherData);
+        teachersData.push(newTeacher);
+        renderTeachers(teachersData);
+        updateTeachersCount(teachersData.length, teachersData.length);
+        closeTeacherModal();
+
+        showToast('Teacher added successfully!', 'success');
+    } catch (error) {
+        showToast('Failed to add teacher. Please try again.', 'error');
+    }
+});
+
+
+
+
+let editingId = null;
+
+
+async function deleteTeacher(id) {
+    event.stopPropagation();
+
+}
+
+function deleteTeacher(id) {
+    teachersData = teachersData.filter(t => t.id !== id);
+    renderTeachers(teachersData);
+}
+
+
+function openEditModal(id) {
+    let teacher = teachersData.find(t => t.id === id);
+    if (!teacher) return;
+
+    editingId = id;
+
+    document.getElementById("editFirst").value = teacher.FirstName;
+    document.getElementById("editLast").value = teacher.LastName;
+    document.getElementById("editAge").value = teacher.Age;
+    document.getElementById("editPhone").value = teacher.phone;
+    document.getElementById("editEmail").value = teacher.email;
+    document.getElementById("editTelegram").value = teacher.telegram;
 
     document.getElementById("editModal").classList.remove("hidden");
     document.getElementById("editModal").classList.add("flex");
 }
 
+// SAVE EDITED INFO
+function saveEdit() {
+    let teacher = teachersData.find(t => t.id === editingId);
+    if (!teacher) return;
 
+    teacher.FirstName = document.getElementById("editFirst").value;
+    teacher.LastName = document.getElementById("editLast").value;
+    teacher.Age = document.getElementById("editAge").value;
+    teacher.phone = document.getElementById("editPhone").value;
+    teacher.email = document.getElementById("editEmail").value;
+    teacher.telegram = document.getElementById("editTelegram").value;
+ 
+  
 
-function closeModal() {
+    closeEditModal();
+    renderTeachers(teachersData);
+}
+
+function closeEditModal() {
     document.getElementById("editModal").classList.add("hidden");
     document.getElementById("editModal").classList.remove("flex");
 }
-
-
-
-function saveEdit() {
-    const id = Number(document.getElementById("edit-id").value);
-
-    let teacher = teachersData.find(teacher => teacher.id === id);
-
-    teacher.FirstName = document.getElementById("edit-first").value;
-    teacher.LastName = document.getElementById("edit-last").value;
-    teacher.gender = document.getElementById("edit-subject").value;
-    teacher.phone = document.getElementById("edit-phone").value;
-    teacher.email = document.getElementById("edit-email").value;
-    teacher.telegram = document.getElementById("edit-telegram").value;
-    teacher.linkedin = document.getElementById("edit-linkedin").value;
-    teacher.rating = Number(document.getElementById("edit-rating").value);
-
-    closeModal();
-    renderTeachers();
-}
-
-
-fetch("https://6921b86c512fb4140be12281.mockapi.io/teachers/").then((res) =>
-    res.json()
-).then((data) => (
-    console.log(data)
-))
-
-
-
-// async function getData() {
-//     try {
-//         let res = axios.get("https://6921b86c512fb4140be12281.mockapi.io/teachers/");
-//         console.log(res)
-//     } catch (error) {
-//         console.log(error);
-
-//     }
-// }
-// getData();
 
 
 
