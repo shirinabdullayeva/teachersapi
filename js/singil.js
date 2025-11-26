@@ -95,13 +95,13 @@ function renderTeacherDetail(teacher) {
                 <div class="[&:last-child]:pb-6 p-6">
                     <div class="flex flex-col items-center text-center">
                         <span class="relative flex size-10 shrink-0 overflow-hidden rounded-full h-32 w-32 mb-4 ring-4 ring-blue-100 dark:ring-blue-900">
-                            ${teacher.avatar ? `<img class="aspect-square size-full" alt="${teacher.FirsName}" src="${teacher.avatar}">` : `<div class="w-full h-full rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-4xl font-bold">
+                            ${teacher.avatar ? `<img class="aspect-square size-full" alt="${teacher.FirstName}" src="${teacher.avatar}">` : `<div class="w-full h-full rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-4xl font-bold">
                                     ${getInitials(teacher.LastName)}
                                 </div>`}
                         </span>
                         <h2 class="text-gray-900 dark:text-white mb-2 text-xl font-bold">${teacher.LastName}</h2>
                         <span class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 gap-1 border-transparent bg-secondary text-secondary-foreground mb-4">
-                            ${teacher.profession}
+                            ${teacher.FirstName}
                         </span>
                         <div class="w-full space-y-4 mb-6">
                             <div class="flex items-center justify-between text-sm">
@@ -110,7 +110,7 @@ function renderTeacherDetail(teacher) {
                             </div>
                             <div class="flex items-center justify-between text-sm">
                                 <span class="text-gray-600 dark:text-gray-400">Experience</span>
-                                <span class="text-gray-900 dark:text-white">${teacher.experience} years</span>
+                                <span class="text-gray-900 dark:text-white">${teacher.gender} years</span>
                             </div>
                             <div class="flex items-center justify-between text-sm">
                                 <span class="text-gray-600 dark:text-gray-400">Gender</span>
@@ -195,6 +195,17 @@ function renderTeacherDetail(teacher) {
                                         </div>
                                     </div>
                                 </div>
+                                 <div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-700/50">
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <div class="p-2 rounded-lg bg-blue-100 dark:bg-blue-900">
+                                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap h-5 w-5 flex-shrink-0" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm text-gray-600 dark:text-gray-400">Profession</p>
+                                            <p class="text-gray-900 dark:text-white">${teacher.profession}</p>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-700/50">
                                     <div class="flex items-center gap-3 mb-2">
                                         <div class="p-2 rounded-lg bg-blue-100 dark:bg-blue-900">
@@ -237,7 +248,7 @@ function renderStudentDetail(student) {
                         </span>
                         <h2 class="text-gray-900 dark:text-white mb-2 text-xl font-bold">${student.firstname} ${student.lastname}</h2>
                         <span class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 gap-1 border-blue-500 text-blue-600 dark:text-blue-400 mb-4">
-                            Grade ${student.profession}
+                            Grade ${student.gender}
                         </span>
                         <div class="w-full space-y-4 mb-6">
                             <div class="flex items-center justify-between text-sm">
@@ -371,6 +382,7 @@ function renderStudentDetail(student) {
                                             <p class="text-gray-900 dark:text-white truncate">${student.teacherId}</p>
                                         </div>
                                </div>
+                              
 
                                 </div>
                             </div>

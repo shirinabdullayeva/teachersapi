@@ -541,7 +541,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         studentForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            e.stopPropagation();
+         
 
             const formData = new FormData(e.target);
             const studentData = {

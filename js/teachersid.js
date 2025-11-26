@@ -214,6 +214,7 @@ async function deleteTeacherFromAPI(teacherId) {
 
 function renderTeachers(teachers = teachersData) {
     let container = document.getElementById("teachersContainer");
+    // innerHTML = "";
     if (!container) return;
 
     if (teachers.length === 0) {
@@ -301,7 +302,8 @@ function renderTeachers(teachers = teachersData) {
                     ${teacher.email}
                 </div>
                 <div class="flex items-center gap-2">
-                    <svg class="lucide lucide-send h-4 w-4 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg>
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap h-5 w-5 flex-shrink-0" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
+                                        
                     ${teacher.profession}
                 </div>
                 <div class="flex items-center gap-2">
@@ -545,7 +547,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         teacherForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            e.stopPropagation();
+            // e.stopPropagation();
 
             const formData = new FormData(e.target);
             const teacherData = {
@@ -615,10 +617,16 @@ document.getElementById('addTeacherForm')?.addEventListener('submit', async (e) 
 let editingId = null;
 
 
-async function deleteTeacher(id) {
-    event.stopPropagation();
 
+function deleteTeacher(id, event) {
+    event.stopPropagation(); 
 }
+
+
+// async function deleteTeacher(id) {
+//     event.stopPropagation();
+
+// }
 
 function deleteTeacher(id) {
     teachersData = teachersData.filter(t => t.id !== id);
@@ -643,7 +651,7 @@ function openEditModal(id) {
     document.getElementById("editModal").classList.add("flex");
 }
 
-// SAVE EDITED INFO
+
 function saveEdit() {
     let teacher = teachersData.find(t => t.id === editingId);
     if (!teacher) return;
